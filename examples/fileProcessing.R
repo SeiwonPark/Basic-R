@@ -32,7 +32,6 @@ gg2 <- ggplot(df, aes(x=Entry, y=Humidity)) +
 gg3 <- ggplot(df, aes(x=Entry, y=Pressure)) +
   geom_point(aes(col=Pressure)) +
   scale_color_gradient(low="white", high="black") +
-  #scale_colour_gradientn(colours = rainbow(100)) +
   geom_smooth(method = lm, formula = y ~ splines::bs(x, 8), se=T)
 
 grid.arrange(gg1, gg2, gg3, nrow=3)
